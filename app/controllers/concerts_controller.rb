@@ -16,6 +16,8 @@ class ConcertsController < ApplicationController
 
   # GET /concerts/1 or /concerts/1.json
   def show
+    # no double render because render only gets auto called if it was not called already
+    render @concert if params[:inline] == "true"
   end
 
   # GET /concerts/new
@@ -46,7 +48,7 @@ class ConcertsController < ApplicationController
   def update
     respond_to do |format|
       if @concert.update(concert_params)
-        format.html { redirect_to @concert, notice: "Concert was successfully updated." }
+        format.html { render @concert, notice: "Concert was successfully updated." }
         format.json { render :show, status: :ok, location: @concert }
       else
         format.html { render :edit, status: :unprocessable_entity }
