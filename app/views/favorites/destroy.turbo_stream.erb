@@ -3,3 +3,4 @@
 <% if current_user.favorites.empty? %>
   <%= turbo_stream.replace "no-favorites", "No favorite concerts yet" %>
 <% end %>
+<%= turbo_stream.update "favorites-count", plain: current_user.favorites.count %>

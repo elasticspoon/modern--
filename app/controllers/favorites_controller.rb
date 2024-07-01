@@ -8,6 +8,7 @@
 #---
 class FavoritesController < ApplicationController
   def index
+    render partial: "favorites_count_only" if params[:count_only] == "true"
   end
 
   def create
