@@ -4,7 +4,15 @@
       <% @schedule.schedule_days.each do |schedule_day| %>
         <% date_string = schedule_day.day.by_example("2006-01-02") %>
         <section class="column">
-          <div class="text-center">
+          <%# BUG: this did not work %>
+          <div
+            class="text-center border-b-2 border-transparent"
+            data-controller="css"
+            data-css-applied-value="false"
+            data-css-css-class="border-red-700"
+            data-css-target="element"
+            data-action="click->css#toggleClass"
+          >
             <%= schedule_day.day.by_example("Jan 2") %>
           </div>
         </section>
@@ -15,11 +23,15 @@
     </div>
     <div class="flex justify-center">
       <div class="w-4/5">
-        <%= text_field_tag("query", "",
-              placeholder: "Search concerts", type: "search",
-              id: "search_query",
-              autocomplete: "off",
-              class: "w-full px-3 py-2 border border-gray-400 rounded-lg") %>
+        <%= text_field_tag(
+          "query",
+          "",
+          placeholder: "Search concerts",
+          type: "search",
+          id: "search_query",
+          autocomplete: "off",
+          class: "w-full px-3 py-2 border border-gray-400 rounded-lg",
+        ) %>
       </div>
     </div>
   </section>
@@ -30,8 +42,7 @@
   <section class="js--day">
     <% @schedule.schedule_days.each do |schedule_day| %>
       <% date_string = schedule_day.day.by_example("2006-01-02") %>
-      <section class="day-body"
-               id="day-body-<%= schedule_day.day_string %>">
+      <section class="day-body" id="day-body-<%= schedule_day.day_string %>">
         <%= render(schedule_day, show: !schedule_day.hidden) %>
       </section>
       <br>
