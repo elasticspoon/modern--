@@ -7,8 +7,5 @@ import { application } from "./application"
 import CssController from "./css_controller.ts"
 application.register("css", CssController)
 
-import FavoriteToggleController from "./favorite_toggle_controller.ts"
-application.register("favorite-toggle", FavoriteToggleController)
-
-import TextController from "./text_controller.js"
+import TextController from "./text_controller.ts"
 application.register("text", TextController)

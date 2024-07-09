@@ -10,7 +10,7 @@ export default class extends Controller {
   cssClasses: string[]
 
   static values: ValueDefinitionMap = { status: Boolean }
-  statusValue: Boolean
+  statusValue: boolean
 
   toggleClass() {
     this.statusValue = !this.statusValue
@@ -22,7 +22,7 @@ export default class extends Controller {
 
   updateClasses(): void {
     for (const cssClass of this.cssClasses) {
-      this.elementTarget.classList.toggle(cssClass, !this.statusValue);
+      this.elementTarget.classList.toggle(cssClass, this.statusValue);
     }
   }
 }
