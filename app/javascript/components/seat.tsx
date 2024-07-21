@@ -1,6 +1,6 @@
 import * as React from "react"
 
-interface SeatProps {
+export interface SeatProps {
   seatNumber: number
   status: string
   clickHandler: (seatNumber: number) => void
@@ -33,8 +33,7 @@ function Seat({
     <td>
       <span
         className={`${cssClass} ${stateDisplayClass()}`}
-        onClick={changeState}
-      >
+        onClick={changeState}>
         {seatNumber + 1}
       </span>
     </td>
