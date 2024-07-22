@@ -1,7 +1,7 @@
 import * as React from "react"
 import Seat from "./seat"
 
-interface RowProps {
+export interface RowProps {
   rowNumber: number
   seatsPerRow: number
   ticketsToBuyCount: number
@@ -15,7 +15,6 @@ interface RowProps {
 //     Array(props.seatPerRow).keys()
 //   )
 function Row({
-  rowNumber,
   seatsPerRow,
   ticketsToBuyCount,
 }: RowProps): React.ReactElement {
