@@ -2,7 +2,7 @@ import * as React from "react"
 import { fireEvent, render, screen } from "@testing-library/react"
 import Seat, { SeatProps } from "./seat"
 
-describe("Seat Compnent", () => {
+describe("Seat Component", () => {
   const mockClickHandler = jest.fn().mockName("mockClickHandler")
   function renderSeat(props = {}) {
     const defaultProps: SeatProps = {

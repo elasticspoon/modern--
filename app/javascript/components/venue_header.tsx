@@ -1,6 +1,6 @@
 import * as React from "react"
 
-interface VenueHeaderProps {
+export interface VenueHeaderProps {
   seatsPerRow: number
   setTicketsToBuyCount: (n: number) => void
 }
