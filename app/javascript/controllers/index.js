@@ -7,5 +7,11 @@ import { application } from "./application"
 import CssController from "./css_controller.ts"
 application.register("css", CssController)
 
+import CssFlipController from "./css_flip_controller.ts"
+application.register("css-flip", CssFlipController)
+
+import FavoriteToggleController from "./favorite_toggle_controller.ts"
+application.register("favorite-toggle", FavoriteToggleController)
+
 import TextController from "./text_controller.ts"
 application.register("text", TextController)
