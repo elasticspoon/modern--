@@ -2,6 +2,7 @@
   "compilerOptions": {
     "declaration": false,
     "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "lib": ["es2019", "dom"],
     "jsx": "react",

@@ -1,9 +1,16 @@
 import * as React from "react"
+import styled from "styled-components"
 
 export interface VenueHeaderProps {
   seatsPerRow: number
   setTicketsToBuyCount: (n: number) => void
 }
+
+const StyledHeader = styled.span`
+  font-size: 1.5rem;
+  font-wieght: bold;
+  margin-inline: 15px;
+`
 
 function options(seatsPerRow: number): React.ReactNode {
   const arrayOfNumbers: number[] = Array.from(Array(seatsPerRow).keys())
@@ -25,7 +32,7 @@ function VenueHeader({
 
   return (
     <div>
-      <span>How many tickets would you like?</span>
+      <StyledHeader>How many tickets would you like?</StyledHeader>
       <span>
         <select onChange={setTicketsOnChange}>
           {options(seatsPerRow)}
